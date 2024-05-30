@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="ImportarXmlFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{0144B9A0-2286-4573-86CA-F6322431513D}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{1FA57011-C87B-4A42-83CE-53615E0C33DB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,6 +26,23 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=.;Initial Catalog=SSISIntro;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-ImportarXmlFile-{B59DA1ED-0012-41C0-A457-743D4D435CD3}LocalHost.SSISIntro;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.SSISIntro.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{428A82B5-6673-4575-AB45-8FE352D3EB25}"
+      DTS:ObjectName="LocalHost.SSISIntro.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;User ID=sa;Initial Catalog=SSISIntro;Provider=SQLOLEDB.1;Application Name=SSIS-ImportarXmlFile-{428A82B5-6673-4575-AB45-8FE352D3EB25}LocalHost.SSISIntro.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA1GT3Ytia3Eqg44Frvcc6LAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB7YDE+pJmnrXHkl5uUgqrUc3TOTAiP1ASWVlk3rY/BQwAAAAAOgAAAAAIAACAAAABRVfzAT0n8jQ7gd5KVB11tqOrmEOrtPiyBpOqYwPOd/TAAAABC2Kfnr80db8v4A1KmaZ2yHEUT+MwOAOr5GPs5FBGj+X6SQ8kYTG1DKhmxwULwKiFAAAAA31QsFrMDHAeQTfswhlwnuUoVrm+FcAhuDS+XFXbg+smLCcy4mJ7KxMbd9hZ1MocOZ0cvy8f4EOUpvGKdHUSSsw</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -262,8 +279,8 @@
               <connections>
                 <connection
                   refId="Package\ImportarDatosEmpleadosSQLServer\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.SSISIntro]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SSISIntro]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SSISIntro.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SSISIntro.sa]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -639,13 +656,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\ImportarDatosEmpleadosSQLServer\Origen XML"
-          TopLeft="40.4999997268121,31.1666666968001" />
+          Size="171.2,41.6"
+          Id="Package\ImportarDatosEmpleadosSQLServer\OLE DB Destination"
+          TopLeft="33.3333315120804,194.999998643994" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\ImportarDatosEmpleadosSQLServer\Data Conversion"
           TopLeft="33.3333315120802,113.533332543837" />
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\ImportarDatosEmpleadosSQLServer\Origen XML"
+          TopLeft="40.4999997268121,31.1666666968001" />
         <EdgeLayout
           Id="Package\ImportarDatosEmpleadosSQLServer.Paths[Empleado]"
           TopLeft="109.316665619446,72.7666666968001">
@@ -668,10 +689,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\ImportarDatosEmpleadosSQLServer\OLE DB Destination"
-          TopLeft="33.3333315120804,194.999998643994" />
         <EdgeLayout
           Id="Package\ImportarDatosEmpleadosSQLServer.Paths[Data Conversion Output]"
           TopLeft="115.13333151208,155.133332543837">
